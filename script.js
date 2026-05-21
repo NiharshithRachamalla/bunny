@@ -445,60 +445,50 @@ window.toggleMenu = function() {
   if (menu) menu.classList.toggle('open');
 };
 
-window.submitForm = function() {
-  const nameVal = document.getElementById('fname').value.trim();
-  const emailVal = document.getElementById('femail').value.trim();
-  const msgVal = document.getElementById('fmsg').value.trim();
-  
-  if (!nameVal || !emailVal || !msgVal) {
-    alert('Please fill in all fields.');
-    return;
-  }
-  
-  const btn = document.querySelector('.btn-submit');
-  if (btn) {
-    btn.textContent = 'Sending...';
-    btn.disabled = true;
-  }
-  
-  // Submit contact form via Web3Forms
-  fetch('https://api.web3forms.com/submit', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-    },
-    body: JSON.stringify({
-      access_key: 'eeb40171-e3f4-48d3-a8fd-6cd137c1ccd4',
-      name: nameVal,
-      email: emailVal,
-      message: msgVal
-    })
-  })
-  .then(async (response) => {
-    let json = await response.json();
-    if (response.status == 200) {
-      const form = document.getElementById('contactForm');
-      const success = document.getElementById('formSuccess');
-      if (form) form.style.display = 'none';
-      if (success) success.style.display = 'block';
-    } else {
-      alert(json.message || 'Something went wrong. Please try again.');
-      if (btn) {
-        btn.textContent = 'Send Message';
-        btn.disabled = false;
+// Bind Web3Forms contact form submission listener
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('contactForm');
+  if (form) {
+    const submitBtn = form.querySelector('.btn-submit');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      const originalText = submitBtn ? submitBtn.textContent : "Send Message";
+
+      if (submitBtn) {
+        submitBtn.textContent = "Sending...";
+        submitBtn.disabled = true;
       }
-    }
-  })
-  .catch(error => {
-    console.error(error);
-    alert('Form submission failed. Please check your internet connection and try again.');
-    if (btn) {
-      btn.textContent = 'Send Message';
-      btn.disabled = false;
-    }
-  });
-};
+
+      try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          body: formData
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          const success = document.getElementById('formSuccess');
+          if (form) form.style.display = 'none';
+          if (success) success.style.display = 'block';
+          form.reset();
+        } else {
+          alert("Error: " + data.message);
+        }
+      } catch (error) {
+        console.error(error);
+        alert("Something went wrong. Please try again.");
+      } finally {
+        if (submitBtn) {
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+        }
+      }
+    });
+  }
+});
 
 /**
  * Hero Background Canvas Particles (Google Antigravity style)

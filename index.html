@@ -175,21 +175,22 @@
           </div>
         </div>
         <div>
-          <div class="contact-form" id="contactForm">
+          <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="eeb40171-e3f4-48d3-a8fd-6cd137c1ccd4">
             <div class="form-field">
-              <input type="text" id="fname" placeholder="Name" autocomplete="name">
+              <input type="text" name="name" id="fname" placeholder="Name" autocomplete="name" required>
               <label for="fname">Your Name</label>
             </div>
             <div class="form-field">
-              <input type="email" id="femail" placeholder="Email" autocomplete="email">
+              <input type="email" name="email" id="femail" placeholder="Email" autocomplete="email" required>
               <label for="femail">Email Address</label>
             </div>
             <div class="form-field">
-              <textarea id="fmsg" placeholder="Message"></textarea>
+              <textarea name="message" id="fmsg" placeholder="Message" required></textarea>
               <label for="fmsg">Your Message</label>
             </div>
-            <button class="btn-submit" onclick="submitForm()">Send Message</button>
-          </div>
+            <button type="submit" class="btn-submit">Send Message</button>
+          </form>
           <div class="form-success" id="formSuccess">
             <div style="font-size:2rem;margin-bottom:1rem">✓</div>
             <div style="font-family:var(--ff-head);font-size:1.2rem;font-weight:700;margin-bottom:.5rem">Message sent!
