@@ -461,12 +461,43 @@ window.submitForm = function() {
     btn.disabled = true;
   }
   
-  setTimeout(() => {
-    const form = document.getElementById('contactForm');
-    const success = document.getElementById('formSuccess');
-    if (form) form.style.display = 'none';
-    if (success) success.style.display = 'block';
-  }, 1200);
+  // Submit contact form via Web3Forms
+  fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    },
+    body: JSON.stringify({
+      access_key: 'eeb40171-e3f4-48d3-a8fd-6cd137c1ccd4',
+      name: nameVal,
+      email: emailVal,
+      message: msgVal
+    })
+  })
+  .then(async (response) => {
+    let json = await response.json();
+    if (response.status == 200) {
+      const form = document.getElementById('contactForm');
+      const success = document.getElementById('formSuccess');
+      if (form) form.style.display = 'none';
+      if (success) success.style.display = 'block';
+    } else {
+      alert(json.message || 'Something went wrong. Please try again.');
+      if (btn) {
+        btn.textContent = 'Send Message';
+        btn.disabled = false;
+      }
+    }
+  })
+  .catch(error => {
+    console.error(error);
+    alert('Form submission failed. Please check your internet connection and try again.');
+    if (btn) {
+      btn.textContent = 'Send Message';
+      btn.disabled = false;
+    }
+  });
 };
 
 /**
