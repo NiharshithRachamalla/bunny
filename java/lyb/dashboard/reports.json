@@ -1,0 +1,242 @@
+{
+  "recommendations": {
+    "Rachamalla Niharshith": {
+      "collaborative": [],
+      "content_based": [
+        {
+          "id": "B05",
+          "title": "Design Patterns",
+          "genre": "Technology",
+          "copies": 3
+        }
+      ]
+    },
+    "Sandeep Kumar": {
+      "collaborative": [
+        {
+          "id": "B01",
+          "title": "Introduction to Algorithms",
+          "genre": "Technology",
+          "copies": 2
+        }
+      ],
+      "content_based": [
+        {
+          "id": "B01",
+          "title": "Introduction to Algorithms",
+          "genre": "Technology",
+          "copies": 2
+        },
+        {
+          "id": "B05",
+          "title": "Design Patterns",
+          "genre": "Technology",
+          "copies": 3
+        }
+      ]
+    },
+    "Anjali Sharma": {
+      "collaborative": [
+        {
+          "id": "B01",
+          "title": "Introduction to Algorithms",
+          "genre": "Technology",
+          "copies": 2
+        },
+        {
+          "id": "B02",
+          "title": "Clean Code",
+          "genre": "Technology",
+          "copies": 1
+        }
+      ],
+      "content_based": [
+        {
+          "id": "B01",
+          "title": "Introduction to Algorithms",
+          "genre": "Technology",
+          "copies": 2
+        },
+        {
+          "id": "B02",
+          "title": "Clean Code",
+          "genre": "Technology",
+          "copies": 1
+        }
+      ]
+    },
+    "Rahul Verma": {
+      "collaborative": [
+        {
+          "id": "B01",
+          "title": "Introduction to Algorithms",
+          "genre": "Technology",
+          "copies": 2
+        },
+        {
+          "id": "B02",
+          "title": "Clean Code",
+          "genre": "Technology",
+          "copies": 1
+        }
+      ],
+      "content_based": [
+        {
+          "id": "B01",
+          "title": "Introduction to Algorithms",
+          "genre": "Technology",
+          "copies": 2
+        },
+        {
+          "id": "B02",
+          "title": "Clean Code",
+          "genre": "Technology",
+          "copies": 1
+        }
+      ]
+    }
+  },
+  "sentiment_analysis": {
+    "reviews": [
+      {
+        "borrower": "Rachamalla Niharshith",
+        "book": "Introduction to Algorithms",
+        "review": "This book is an absolute masterpiece! Highly practical and clean structure. Love the clear proofs.",
+        "sentiment": "Positive",
+        "score": 1.0,
+        "positive_hits": [
+          "masterpiece",
+          "highly",
+          "practical",
+          "love",
+          "clear"
+        ],
+        "negative_hits": []
+      },
+      {
+        "borrower": "Sandeep Kumar",
+        "book": "Clean Code",
+        "review": "Clean Code is an amazing, brilliant, and must-read book. Easy to understand and highly recommended!",
+        "sentiment": "Positive",
+        "score": 1.0,
+        "positive_hits": [
+          "amazing",
+          "brilliant",
+          "must-read",
+          "easy",
+          "highly"
+        ],
+        "negative_hits": []
+      },
+      {
+        "borrower": "Anjali Sharma",
+        "book": "Deep Learning",
+        "review": "The deep learning content is brilliant, clear, and wonderful, but some mathematical sections are heavy, difficult, and confusing.",
+        "sentiment": "Neutral",
+        "score": 0.0,
+        "positive_hits": [
+          "brilliant",
+          "clear",
+          "wonderful"
+        ],
+        "negative_hits": [
+          "heavy",
+          "difficult",
+          "confusing"
+        ]
+      },
+      {
+        "borrower": "Rahul Verma",
+        "book": "The Great Gatsby",
+        "review": "A boring and tedious read. The pacing was dull and disappointingly slow. Quite useless for computer science.",
+        "sentiment": "Negative",
+        "score": -1.0,
+        "positive_hits": [],
+        "negative_hits": [
+          "boring",
+          "tedious",
+          "dull",
+          "useless"
+        ]
+      }
+    ],
+    "summary": {
+      "positive": 2,
+      "neutral": 1,
+      "negative": 1,
+      "total_reviews": 4
+    }
+  },
+  "demand_forecast": {
+    "book_forecasts": [
+      {
+        "book_id": "B01",
+        "title": "Introduction to Algorithms",
+        "genre": "Technology",
+        "available_copies": 1,
+        "total_copies": 2,
+        "historical_checkouts": 1,
+        "demand_score": 33.33,
+        "stockout_risk": "High",
+        "urgency_level": "High",
+        "predicted_checkouts": 1.7
+      },
+      {
+        "book_id": "B02",
+        "title": "Clean Code",
+        "genre": "Technology",
+        "available_copies": 0,
+        "total_copies": 1,
+        "historical_checkouts": 2,
+        "demand_score": 66.67,
+        "stockout_risk": "Critical",
+        "urgency_level": "High",
+        "predicted_checkouts": 3.3
+      },
+      {
+        "book_id": "B03",
+        "title": "The Great Gatsby",
+        "genre": "Fiction",
+        "available_copies": 5,
+        "total_copies": 5,
+        "historical_checkouts": 0,
+        "demand_score": 0.0,
+        "stockout_risk": "Low",
+        "urgency_level": "Low",
+        "predicted_checkouts": 0.0
+      },
+      {
+        "book_id": "B04",
+        "title": "Deep Learning",
+        "genre": "AI & ML",
+        "available_copies": 1,
+        "total_copies": 1,
+        "historical_checkouts": 0,
+        "demand_score": 0.0,
+        "stockout_risk": "Low",
+        "urgency_level": "Low",
+        "predicted_checkouts": 0.0
+      },
+      {
+        "book_id": "B05",
+        "title": "Design Patterns",
+        "genre": "Technology",
+        "available_copies": 3,
+        "total_copies": 3,
+        "historical_checkouts": 0,
+        "demand_score": 0.0,
+        "stockout_risk": "Low",
+        "urgency_level": "Low",
+        "predicted_checkouts": 0.0
+      }
+    ],
+    "genre_demand": [
+      {
+        "genre": "Technology",
+        "checkout_count": 3,
+        "demand_share_percentage": 100.0
+      }
+    ],
+    "overall_occupancy_rate": 16.7
+  }
+}

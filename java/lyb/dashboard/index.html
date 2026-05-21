@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartLib AI — Enterprise Library Analytics Dashboard</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        
+        <!-- Header -->
+        <header class="glass-header animate-fade-in">
+            <div class="logo-area">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-brain-circuit"></i>
+                </div>
+                <div>
+                    <h1>SmartLib <span class="accent-text">AI</span></h1>
+                    <p class="subtitle">Next-Gen Enterprise Analytics & Cognitive Intelligence Hub</p>
+                </div>
+            </div>
+            <div class="header-badges">
+                <span class="status-badge"><span class="pulse-dot"></span> Java Core Live</span>
+                <span class="status-badge AI-badge"><span class="pulse-dot green"></span> Python AI Online</span>
+            </div>
+        </header>
+
+        <!-- Metrics Row -->
+        <section class="metrics-grid">
+            <div class="metric-card glass animate-slide-up" style="animation-delay: 0.1s;">
+                <div class="metric-icon blue"><i class="fa-solid fa-book-bookmark"></i></div>
+                <div class="metric-info">
+                    <h3 id="stat-total-volume">12</h3>
+                    <p>Total Catalog Volume</p>
+                </div>
+            </div>
+            <div class="metric-card glass animate-slide-up" style="animation-delay: 0.2s;">
+                <div class="metric-icon purple"><i class="fa-solid fa-users"></i></div>
+                <div class="metric-info">
+                    <h3 id="stat-active-borrowers">2</h3>
+                    <p>Active Borrowers</p>
+                </div>
+            </div>
+            <div class="metric-card glass animate-slide-up" style="animation-delay: 0.3s;">
+                <div class="metric-icon emerald"><i class="fa-solid fa-chart-pie"></i></div>
+                <div class="metric-info">
+                    <h3 id="stat-occupancy-rate">16.7%</h3>
+                    <p>Inventory Occupancy</p>
+                </div>
+            </div>
+            <div class="metric-card glass animate-slide-up" style="animation-delay: 0.4s;">
+                <div class="metric-icon amber"><i class="fa-solid fa-coins"></i></div>
+                <div class="metric-info">
+                    <h3 id="stat-fines">₹0.00</h3>
+                    <p>Accumulated Fines</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Workspace: Data & AI Insights -->
+        <main class="dashboard-main">
+
+            <!-- Left Panel: Java Core Data -->
+            <div class="dashboard-column">
+                
+                <!-- Book Catalog Card -->
+                <div class="content-card glass animate-slide-up" style="animation-delay: 0.5s;">
+                    <div class="card-header">
+                        <h2><i class="fa-solid fa-database text-blue"></i> Enterprise Book Catalog</h2>
+                        <span class="source-tag java-tag">Java Repository</span>
+                    </div>
+                    <div class="table-container">
+                        <table id="catalog-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Title</th>
+                                    <th>Genre</th>
+                                    <th>Stock</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Loaded dynamically -->
+                                <tr><td colspan="5" class="loading">Parsing Java repository state...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Transaction Logs Card -->
+                <div class="content-card glass animate-slide-up" style="animation-delay: 0.6s;">
+                    <div class="card-header">
+                        <h2><i class="fa-solid fa-clock-rotate-left text-purple"></i> Borrowing Logs & Waitlists</h2>
+                        <span class="source-tag java-tag">Concurrent Service</span>
+                    </div>
+                    <div class="table-container">
+                        <table id="transactions-table">
+                            <thead>
+                                <tr>
+                                    <th>TxID</th>
+                                    <th>Book</th>
+                                    <th>Member</th>
+                                    <th>Timeline</th>
+                                    <th>State</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Loaded dynamically -->
+                                <tr><td colspan="5" class="loading">Scanning transactions...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right Panel: Python AI Layer -->
+            <div class="dashboard-column">
+
+                <!-- Recommender Panel -->
+                <div class="content-card glass animate-slide-up" style="animation-delay: 0.7s;">
+                    <div class="card-header">
+                        <h2><i class="fa-solid fa-wand-magic-sparkles text-pink"></i> Cognitive Recommender</h2>
+                        <div class="member-selector-wrapper">
+                            <select id="member-select" class="glass-select">
+                                <option value="Rachamalla Niharshith">Rachamalla Niharshith (VIP)</option>
+                                <option value="Sandeep Kumar">Sandeep Kumar</option>
+                                <option value="Anjali Sharma">Anjali Sharma</option>
+                                <option value="Rahul Verma">Rahul Verma</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="recommendations-container">
+                        <div class="rec-split">
+                            <div class="rec-half">
+                                <h3><i class="fa-solid fa-people-arrows text-blue"></i> Collaborative Filtering</h3>
+                                <p class="rec-desc">Calculated via Jaccard similarity matrix of overlapping borrowing behaviors.</p>
+                                <ul id="collab-rec-list" class="rec-list">
+                                    <!-- Loaded dynamically -->
+                                </ul>
+                            </div>
+                            <div class="rec-half">
+                                <h3><i class="fa-solid fa-tags text-emerald"></i> Content-Based Filtering</h3>
+                                <p class="rec-desc">Recommends by analyzing genre affinity and high-frequency preference vector tags.</p>
+                                <ul id="content-rec-list" class="rec-list">
+                                    <!-- Loaded dynamically -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sentiment Sentiment Card -->
+                <div class="content-card glass animate-slide-up" style="animation-delay: 0.8s;">
+                    <div class="card-header">
+                        <h2><i class="fa-solid fa-face-smile text-emerald"></i> NLP Sentiment Analytics</h2>
+                        <span class="source-tag python-tag">Python NLP Lexicon</span>
+                    </div>
+                    <div class="sentiment-summary-box">
+                        <div class="sentiment-pill positive"><span id="sent-pos">0</span> Positive Reviews</div>
+                        <div class="sentiment-pill neutral"><span id="sent-neu">0</span> Neutral</div>
+                        <div class="sentiment-pill negative"><span id="sent-neg">0</span> Negative</div>
+                    </div>
+                    <div class="reviews-list" id="reviews-list-container">
+                        <!-- Loaded dynamically -->
+                    </div>
+                </div>
+
+                <!-- Demand Forecast & Velocity Card -->
+                <div class="content-card glass animate-slide-up" style="animation-delay: 0.9s;">
+                    <div class="card-header">
+                        <h2><i class="fa-solid fa-chart-line text-amber"></i> Predictive Demand Forecasting</h2>
+                        <span class="source-tag python-tag">Linear Velocity Projections</span>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="demandChart"></canvas>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <!-- Simulation Deck Control -->
+        <section class="simulation-deck glass animate-slide-up" style="animation-delay: 1.0s;">
+            <div class="deck-info">
+                <h2><i class="fa-solid fa-gamepad text-emerald"></i> Simulation & Control Terminal</h2>
+                <p>Simulate backend state mutations and trigger downstream AI cognitive processing loops instantly.</p>
+            </div>
+            <div class="deck-buttons">
+                <button class="btn btn-outline" id="btn-run-java"><i class="fa-solid fa-mug-hot"></i> Trigger Java Sim</button>
+                <button class="btn btn-primary" id="btn-run-ai"><i class="fa-solid fa-circle-nodes"></i> Recalculate AI Models</button>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="dashboard-footer">
+            <p>SmartLib AI is a multi-language showcase architecture engineered for enterprise grade resumes.</p>
+            <p>Built with <i class="fa-solid fa-heart text-red"></i> using Java Core Backend · Python AI Engine · Glassmorphic CSS Engine</p>
+        </footer>
+
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="toast hidden"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>

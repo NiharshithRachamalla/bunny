@@ -1,0 +1,19 @@
+# Ignore sensitive credentials and recovery keys
+github-recovery-codes.txt
+*.dat
+NTUSER.DAT*
+ntuser.*
+
+# Ignore compilation classes and bytecode
+*.class
+__pycache__/
+*.pyc
+
+# Ignore IDE and agent config directories
+.antigravity-ide/
+.gemini/
+.vscode/
+.idea/
+
+# Ignore WhatsApp temporary media if needed
+# WhatsApp Image*

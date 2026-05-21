@@ -1,0 +1,42 @@
+[
+  {
+    "id": "B01",
+    "title": "Introduction to Algorithms",
+    "author": "Thomas H. Cormen",
+    "genre": "Technology",
+    "totalCopies": 2,
+    "availableCopies": 1
+  },
+  {
+    "id": "B02",
+    "title": "Clean Code",
+    "author": "Robert C. Martin",
+    "genre": "Technology",
+    "totalCopies": 1,
+    "availableCopies": 0
+  },
+  {
+    "id": "B03",
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "genre": "Fiction",
+    "totalCopies": 5,
+    "availableCopies": 5
+  },
+  {
+    "id": "B04",
+    "title": "Deep Learning",
+    "author": "Ian Goodfellow",
+    "genre": "AI & ML",
+    "totalCopies": 1,
+    "availableCopies": 1
+  },
+  {
+    "id": "B05",
+    "title": "Design Patterns",
+    "author": "Erich Gamma",
+    "genre": "Technology",
+    "totalCopies": 3,
+    "availableCopies": 3
+  }
+]

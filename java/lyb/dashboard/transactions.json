@@ -1,0 +1,26 @@
+[
+  {
+    "txId": "TX1001",
+    "bookTitle": "Introduction to Algorithms",
+    "borrowerName": "Rachamalla Niharshith",
+    "checkoutDate": "2026-05-21",
+    "dueDate": "2026-06-04",
+    "isReturned": false
+  },
+  {
+    "txId": "TX1002",
+    "bookTitle": "Clean Code",
+    "borrowerName": "Sandeep Kumar",
+    "checkoutDate": "2026-05-21",
+    "dueDate": "2026-06-04",
+    "isReturned": true
+  },
+  {
+    "txId": "TX1003",
+    "bookTitle": "Clean Code",
+    "borrowerName": "Rachamalla Niharshith",
+    "checkoutDate": "2026-05-23",
+    "dueDate": "2026-06-06",
+    "isReturned": false
+  }
+]
